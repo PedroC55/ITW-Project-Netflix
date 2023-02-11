@@ -8,6 +8,7 @@ var vm = function () {
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
+    self.LikesMovies = ko.observableArray([]);
     self.currentPage = ko.observable(1);
     self.pagesize = ko.observable(20);
     self.totalRecords = ko.observable(50);
@@ -55,8 +56,34 @@ var vm = function () {
             self.pagesize(data.PageSize)
             self.totalPages(data.TotalPages);
             self.totalRecords(data.TotalTitles);
-            //self.SetFavourites();
+            self.SetFavourites();
         });
+        if (amplify.store("LikesMovies")) {
+            self.LikesMovies(amplify.store("LikesMovies"));
+            console.log(self.LikesMovies())
+        }
+    };
+    self.SetFavourites = function () {
+        for (var i = 0; i < self.LikesMovies().length; i++) {
+            console.log("#favourite_" + self.LikesMovies()[i])
+            $("#favourite_" + self.LikesMovies()[i]).addClass("text-danger").addClass("fa-heart").removeClass("fa-heart-o");
+        }
+    };
+
+
+
+    self.addFavorite = function (id) {
+        console.log(id, self.LikesMovies(), self.LikesMovies().length)
+        if ($("#favourite_" + id).hasClass("fa-heart-o")) {
+            $("#favourite_" + id).addClass("text-danger").addClass("fa-heart").removeClass("fa-heart-o");
+            self.LikesMovies.push(id);
+        }
+        else {
+            $("#favourite_" + id).removeClass("text-danger").removeClass("fa-heart").addClass("fa-heart-o");
+            self.LikesMovies.remove(id);
+        }
+        amplify.store("LikesMovies", self.LikesMovies())
+        console.log(self.LikesMovies(), self.LikesMovies().length)
     };
     {
         $("#searchbtn").click((event) => {
@@ -128,41 +155,7 @@ var vm = function () {
         }
     });
 
-    $("document").ready(function () {
-        function log(message) {
-            $("<div>").text(message).prependTo("#log");
-            $("#log").scrollTop(0);
-        }
-        var self = this;
-        self.id = ko.observableArray('');
-        self.name = ko.observableArray('');
-        self.titles = ko.observableArray('');
-        $("#searchfilm").autocomplete({
-            source: function (request, response) {
-                $.ajax({
-                    
-                    url: "http://192.168.160.58/netflix/api/Search/titles?name=" + $('#searchfilm').val(),
-                    dataType: "json",
-                    data: {
-                        term: request.term
-                    },
-                    success: function (data) {
-                        console.log(data)
-                        response($.map(data, function (item) {
-                            return {
-                                label: item.Name,
-                                value: item.Name
-                            }
-                        }))
-                    }
-                });
-            },
-            minLength: 4,
-            select: function (event, ui) {
-                log("Selected: " + ui.item.value + " aka " + ui.item.id);
-            }
-        });
-    });
+    
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
         self.error(''); // Clear error message
@@ -228,3 +221,4 @@ $(document).ready(function () {
     console.log("ready!");
     ko.applyBindings(new vm());
 });
+

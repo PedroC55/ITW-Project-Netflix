@@ -2,41 +2,43 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Titles - Netflix API Usage Demo</title>
+    <title>Directors - Netflix API Usage Demo</title>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/themes/base/jquery-ui.css" rel="stylesheet" />
     <link href="netflix.css" rel="stylesheet" />
 </head>
 <body style="color: white;">
     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html" title="Netflix API Usage Demo@by jsp"><img src="netflixIcon.png" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
+            <a class="navbar-brand" href="index.html" title="Netflix API Usage Demo@by jsp"><img src="netflix-logo.png" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index.html">Home</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="titles.html">Titles </a>
-                    </li>
-
-                    <li class="nav-item ">
-                        <div class="btn-group" role="group">
-                            <a id="btnGroupDrop1" role="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DropDown</a>
-                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                <a class="dropdown-item" href="category.html">Categories</a>
-                                <a class="dropdown-item" href="Actors.html">Actors</a>
-                                <a class="dropdown-item" href="director.html">Director</a>
-                                <a class="dropdown-item" href="countries.html">Countries</a>
-                            </div>
-                        </div>
+                    <li class="nav-item bg-dark">
+                        <a class="nav-link" href="movie.html">Movies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Fav.html">Favorites</a>
+                        <a class="nav-link" href="TV Show.html">Series</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            More
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="titles.html">Titles</a>
+                            <a class="dropdown-item" href="category.html">Categories</a>
+                            <a class="dropdown-item" href="Actors.html">Actors</a>
+                            <a class="dropdown-item" href="countries.html">Countries</a>
+                            <a class="dropdown-item" href="director.html">Directors</a>
+                        </div>
+                    </li>
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input id="searchfilm" class="form-control mr-sm-2" type="search" placeholder="Search a Director" aria-label="Search">
@@ -54,7 +56,7 @@
             <div class="row">
                 <p class="mr-auto pt-2">
                     <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
-                    <span data-bind="html: 'Actors: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
+                    <span data-bind="html: 'Directors: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
                 </p>
                 <div class="my-0 pt-3">
                     <ul class="pagination">
@@ -97,7 +99,7 @@
                             <i class="fa fa-eye" title="Selecione para ver detalhes" style="color: white;"></i>
                         </a>
                         <button class="btn btn-sm" style="color: white;">
-                            <i class="fa fa-heart-o" data-bind="attr : { 'id': 'favourite_'+Id }" title="Selecione para adicionar aos favoritos"></i>
+                            <i class="fa fa-heart-o" data-bind="attr : { 'id': 'favourite_'+Id }, click: $parent.addFavorite.bind($data,Id)" title="Selecione para adicionar aos favoritos"></i>
                         </button>
                     </td>
                 </tr>
@@ -132,5 +134,9 @@
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/knockout-3.5.1.js"></script>
     <script src="director.js"></script>
+    <!-- Autocomplete -->
+    <script src="directorsautocomplete.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../Scripts/amplify.js"></script>
 </body>
 </html>

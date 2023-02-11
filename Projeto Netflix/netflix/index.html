@@ -7,184 +7,156 @@
     <link href="../Content/font-awesome.min.css" rel="stylesheet" />
     <link href="netflix.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image.jpg" href="netflixIcon.png" />
+  
 </head>
 <body style="color: white;">
     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
         <div class="container">
 
-            <a class="navbar-brand" href="index.html" title="Netflix API Usage Demo@by jsp"><img src="netflixIcon.png" height="30" class="d-inline-block align-top" alt="" loading="lazy"></a>
+            <a class="navbar-brand" href="index.html" title="Netflix API Usage Demo@by jsp">
+                <img src="netflix-logo.png" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="titles.html">Titles </a>
-                    </li>
-
-                    <li class="nav-item ">
-                        <div class="btn-group" role="group">
-                            <a id="btnGroupDrop1" role="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DropDown</a>
-                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                <a class="dropdown-item" href="category.html">Categories</a>
-                                <a class="dropdown-item" href="Actors.html">Actors</a>
-                                <a class="dropdown-item" href="director.html">Director</a>
-                                <a class="dropdown-item" href="countries.html">Countries</a>
-                            </div>
-                        </div>
+                    <li class="nav-item bg-dark">
+                        <a class="nav-link" href="movie.html">Movies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Fav.html">Favorites</a>
+                        <a class="nav-link" href="TV Show.html">Series</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            More
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="titles.html">Titles</a>
+                            <a class="dropdown-item" href="category.html">Categories</a>
+                            <a class="dropdown-item" href="Actors.html">Actors</a>
+                            <a class="dropdown-item" href="countries.html">Countries</a>
+                            <a class="dropdown-item" href="director.html">Directors</a>
+                        </div>
+                    </li>
+
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search a Title" aria-label="Search">
-                    <button href="titles.html" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+               
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div style="height:30px"></div>
-        <a href="titles.html"><h1 style="color: white"><font size="12" face="Verdane">Featured Titles</font></h1></a>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80057918"><div class="d-block w-100" style="background: center center; background-image: url('imagemlucifer.jpg'); height: 600px; background-size: cover;" alt="First slide"></div></a>
+    <div style="height:5px"></div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+   
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80057918"><div class="d-block w-100" style="background: center center;background-image: url('lucifer2.jpg');height: 600px;background-size: cover;background-position: center center;background-repeat:no-repeat;" alt="First slide"></div></a>
+            </div>
+            <div class="carousel-item">
+                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80192098"><div class="d-block w-100" style="background: center center;background-image: url('lacasadepapel.png');height: 600px;background-size: cover;background-position: center center;background-repeat:no-repeat;" alt="Second slide"></div></a>
+            </div>
+            <div class="carousel-item">
+                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80189685"><div class="d-block w-100" style="background: center center; background-image: url('https://pbs.twimg.com/media/Ed704rbXYAAMM6X.png:large'); height: 600px; background-size: cover; background-position: center center; background-repeat: no-repeat; object-fit: cover;" alt="Third slide"></div></a>
+            </div>
+            <div class="carousel-item">
+                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80025172"><div class="d-block w-100" style="background: center center;background-image: url('narcos.jpg');height: 600px;background-size: cover;background-position: center center;background-repeat:no-repeat;" alt="Fourth slide"></div></a>
+            </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div style="margin:auto;width:100%;">
+        <div style="margin-left: 50px; margin-right: 50px">
+            <div style="height:30px"></div>
+            <a href="http://localhost:61132/Netflix/categoryDetails.html?id=26"><h1 style="color: white;"><font size="5" face="Verdane">Crime TV Shows</font></h1></a>
+            <div class="row" style="align-items: center; text-align: center">
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80002479"><img src="imagempeakyblinders.jpg" class="card-img"></a>
                 </div>
-                <div class="carousel-item">
-                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80192098"><div class="d-block w-100" style="background: center center; background-image: url('imagemlacasadepapel.jpg'); height: 600px; background-size: cover;" alt="Second slide"></div></a>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80057918"><img src="imagemlucifer.jpg" class="card-img-top"></a>
                 </div>
-                <div class="carousel-item">
-                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80189685"><div class="d-block w-100" style="background: center center; background-image: url('imagemthewitcher.jpg'); height: 600px; background-size: cover;" alt="Third slide"></div></a>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80192098"><img src="../Netflix/Novas imagens/la casa de papel.jpeg" class="card-img"></a>
                 </div>
-                <div class="carousel-item">
-                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80025172"><div class="d-block w-100" style="background: center center; background-image: url('imagemnarcos.jpg'); height: 600px; background-size: cover;" alt="Fourth slide"></div></a>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80177803"><img src="imagens cards/crime/imagemdruglords.jpg" class="card-img-top"></a>
                 </div>
-                <div class="carousel-item">
-                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80074249"><div class="d-block w-100" style="background: center center; background-image: url('imagemvikings.jpg'); height: 600px; background-size: cover;" alt="Fifth slide"></div></a>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80117470"><img src="imagens cards/crime/imagem13reasons.jpg" class="card-img-top"></a>
+                </div>
+
+            </div>
+
+            <div style="height:30px"></div>
+            <a href="http://localhost:61132/Netflix/categoryDetails.html?id=1"><h1 style="color: white;"><font size="5" face="Verdane">Action & Adventure</font></h1></a>
+            <div class="row" style="align-items: center;">
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=70242081"><img src="imagens cards/ação/imagemarrow.jpg" class="card-img-top"></a>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80025172"><img src="imagens cards/ação/imagemnarcos.jpg" class="card-img-top"></a>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80186863"><img src="imagens cards/ação/imagemthehumbrella.jpg" class="card-img-top"></a>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80189685"><img src="imagens cards/ação/imagemthewitcher.jpg" class="card-img-top"></a>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80074249"><img src="Novas imagens/the last kingdom.jpeg" class="card-img-top"></a>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+
+            <div style="height:30px"></div>
+            <a href="http://localhost:61132/Netflix/categoryDetails.html?id=9"><h1 style="color: white;"><font size="5" face="Verdane">Horror Movies</font></h1></a>
+            <div class="row" style="align-items: center;">
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80195378"><img src="imagens cards/terror/imagemhaunted2.jpg" class="card-img-top"></a>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80108495"><img src="imagens cards/terror/imagemglitch.jpg" class="card-img-top"></a>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=81026095"><img src="Novas imagens/immortals.jpeg" class="card-img-top"></a>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80008434"><img src="Novas imagens/z nation.jpeg" class="card-img-top"></a>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <a href="http://localhost:61132/Netflix/titleDetails.html?id=80027159"><img src="Novas imagens/zombie.jpeg" class="card-img-top"></a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div style="margin-left: 50px; margin-right: 50px">
-        <div style="height:30px"></div>
-        <a href="http://localhost:61132/Netflix/categoryDetails.html?id=26"><h1 style="color: white;"><font size="5" face="Verdane">Crime TV Shows</font></h1></a>
-        <div class="row" style="align-items: center; text-align: center">
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80002479"><img src="imagempeakyblinders.jpg" class="card-img" ></a>
 
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80057918"><img src="imagemlucifer.jpg" class="card-img-top" ></a>
-
-            </div>
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80192098"><<img src="imagemlacasadepapel.jpg" class="card-img"></a>
-
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80177803"><<img src="imagens cards/crime/imagemdruglords.jpg" class="card-img-top" ></a>
-
-            </div>
-           
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80117470"><<img src="imagens cards/crime/imagem13reasons.jpg" class="card-img-top" ></a>
-
-            </div>
-            
+    <nav class="navbar navbar-dark fixed-bottom bg-dark" role="navigation">
+        <div class="container">
+            <div class="navbar-text small">&copy;ITW2020 - Introdução às Tecnologias Web</div>
+            <div class="navbar-right navbar-text small d-sm-none d-md-block"><a href="http://www.ua.pt" title="Universidade de Aveiro">Universidade de Aveiro</a></div>
         </div>
-
-        <div style="height:30px"></div>
-        <a href="http://localhost:61132/Netflix/categoryDetails.html?id=1"><h1 style="color: white;"><font size="5" face="Verdane">Action & Adventure</font></h1></a>
-        <div class="row" style="align-items: center;">
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=70242081"><img src="imagens cards/ação/imagemarrow.jpg" class="card-img-top" ></a>
-
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80025172"><img src="imagens cards/ação/imagemnarcos.jpg" class="card-img-top" ></a>
-
-            </div>
-            
-
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80186863"><<img src="imagens cards/ação/imagemthehumbrella.jpg" class="card-img-top" ></a>
-
-            </div>
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80037280"><<img src="imagens cards/ação/imagemthewitcher.jpg" class="card-img-top" ></a>
-
-            </div>
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80074249"><<img src="imagens cards/ação/imagemvikings.jpg" class="card-img-top" ></a>
-
-            </div>
-           
-        </div>
-
-        <div style="height:30px"></div>
-        <a href="http://localhost:61132/Netflix/categoryDetails.html?id=9"><h1 style="color: white;"><font size="5" face="Verdane">Horror Movies</font></h1></a>
-        <div class="row" style="align-items: center;">
-
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80195378"><<img src="imagens cards/terror/imagemhaunted2.jpg" class="card-img-top"></a>
-
-            </div>
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80108495"><img src="imagens cards/terror/imagemglitch.jpg" class="card-img-top"></a>
-
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=81026095"><<img src="imagens cards/terror/imagemimmotals.jpg" class="card-img-top"></a>
-
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80008434"><<img src="imagens cards/terror/imagemZnation.jpg" class="card-img-top"></a>
-
-            </div>
-            <div class="card" style="width: 18rem;">
-                <a href="http://localhost:61132/Netflix/titleDetails.html?id=80027159"><<img src="imagens cards/terror/imagemzombie.jpg" class="card-img-top"></a>
-
-            </div>
-        </div>
-        </div>
-
-        <nav class="navbar navbar-dark fixed-bottom bg-dark" role="navigation">
-            <div class="container">
-                <div class="navbar-text small">&copy;ITW2020 - Introdução às Tecnologias Web</div>
-                <div class="navbar-right navbar-text small d-sm-none d-md-block"><a href="http://www.ua.pt" title="Universidade de Aveiro">Universidade de Aveiro</a></div>
-            </div>
-        </nav>
-
-        <script src="../Scripts/jquery-3.0.0.min.js"></script>
-        <script src="../Scripts/bootstrap.bundle.min.js"></script>
-        <script src="../Scripts/knockout-3.5.1.js"></script>
-        <script src="index.js"></script>
+    </nav>
+    <script src="../Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="../Scripts/jquery-3.0.0.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/knockout-3.5.1.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

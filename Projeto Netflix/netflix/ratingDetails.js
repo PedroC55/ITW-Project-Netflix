@@ -51,6 +51,7 @@ var vm = function () {
         var composedUri = self.baseUri() + id;
         ajaxHelper(composedUri, 'GET').done(function (data) {
             self.id(data.Id);
+            self.id(data.Name);
             self.code(data.Code);
             self.description(data.Description);
             self.titles(data.Titles);

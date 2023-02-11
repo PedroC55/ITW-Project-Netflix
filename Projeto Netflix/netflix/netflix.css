@@ -3,7 +3,8 @@
 body {
     font-family: 'Roboto', sans-serif;
     padding: 52px 0 52px 0;
-    background-color: black;
+    background-color:black;
+ 
 }
 .img {
     display: block;
@@ -11,7 +12,7 @@ body {
     margin-right: auto;
     margin-top: 140px;
     margin-bottom: auto;
-    width: 40%;
+    width:40%;
 }
 
 .card {
@@ -21,3 +22,4 @@ body {
     .card:hover {
         transform: scale(1.2);
     }
+

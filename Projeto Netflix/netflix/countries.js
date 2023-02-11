@@ -8,6 +8,7 @@ var vm = function () {
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
     self.records = ko.observableArray([]);
+    self.LikesMovies = ko.observableArray([]);
     self.currentPage = ko.observable(1);
     self.pagesize = ko.observable(20);
     self.totalRecords = ko.observable(50);
@@ -55,8 +56,34 @@ var vm = function () {
             self.pagesize(data.PageSize)
             self.totalPages(data.TotalPages);
             self.totalRecords(data.TotalActors);
-            //self.SetFavourites();
+            self.SetFavourites();
         });
+        if (amplify.store("LikesMovies")) {
+            self.LikesMovies(amplify.store("LikesMovies"));
+            console.log(self.LikesMovies())
+        }
+    };
+    self.SetFavourites = function () {
+        for (var i = 0; i < self.LikesMovies().length; i++) {
+            console.log("#favourite_" + self.LikesMovies()[i])
+            $("#favourite_" + self.LikesMovies()[i]).addClass("text-danger").addClass("fa-heart").removeClass("fa-heart-o");
+        }
+    };
+
+
+
+    self.addFavorite = function (id) {
+        console.log(id, self.LikesMovies(), self.LikesMovies().length)
+        if ($("#favourite_" + id).hasClass("fa-heart-o")) {
+            $("#favourite_" + id).addClass("text-danger").addClass("fa-heart").removeClass("fa-heart-o");
+            self.LikesMovies.push(id);
+        }
+        else {
+            $("#favourite_" + id).removeClass("text-danger").removeClass("fa-heart").addClass("fa-heart-o");
+            self.LikesMovies.remove(id);
+        }
+        amplify.store("LikesMovies", self.LikesMovies())
+        console.log(self.LikesMovies(), self.LikesMovies().length)
     };
     {
         $("#searchbtn").click((event) => {
@@ -79,7 +106,7 @@ var vm = function () {
                         self.totalRecords(data.TotalTitles);
                     }
                     else {
-                        alert("Não existe nenhum filme!")
+                        alert("Não existe nenhum país!")
                         $('#sair').addClass('d-none');
                         $('table').addClass('d-none');
                     }
